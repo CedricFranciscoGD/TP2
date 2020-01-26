@@ -1,9 +1,6 @@
 #include <stdio.h>
-// Bibliothèque permettant de générer des nombres aléatoire pour programmer le comportement du monstre
 #include <stdlib.h>
 #include <time.h>
-
-
 
 int main (){
 	//Variables
@@ -50,23 +47,20 @@ int main (){
 	int pdmBulbizarre = 15;
     int dotBulbizarre = 0;
     
-    int Soin = 4;
-
-    //attaques
+    //capacités
 	int atkLegere = 1;
     int atkLourde = 3;
+    int Soin = 4;
     
-	//Variable comportement joueur
+	//Variables comportements combat
 	int choixAction = 0;
     int choixCible = 0;
     int choixCibleEnnemi = 0;
     int choixActionEnnemi = 0;
-	//Variable comportement Monstre
 	int i = 0;
 	int coutSort = 3;
 	int coutAntidote = 5;
-    
-    
+    int dmgPoison = 1;
 
 	//Barre d'exp des pokémons alliés
 	//Tableau
@@ -83,31 +77,36 @@ int main (){
 	int lvl[3];
 
 	//0 = Salamèche
-	//1 = Bulbizarre
-	//2 = Carapuce
 	lvl[0] = 1;
+    //1 = Bulbizarre
 	lvl[1] = 1;
+    //2 = Carapuce
 	lvl[2] = 1;
 
-
-
-
+    
+    //Initialisation combat
 	printf("Un Aspicot sauvage apparait\n");
 	printf("Aspicot sauvage a %d points de vie\n", pdvAspicot);
-	printf("Vous avez %d points de vie \n", pdvSalameche);
+	printf("Salameche a %d points de vie \n", pdvSalameche);
+    printf("Bulbizarre a %d points de vie \n", pdvBulbizarre);
+    printf("Carapuce a %d points de vie \n", pdvCarapuce);
 
-
-
-// Boucle de combat 
+    // Boucle de combat 
 	while (nombreAmi > 0 || nombreEnnemi >0)
 	{
-        //-------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------
         //TOUR DE SALAMECHE
         if (pdmSalameche<10)
         {
             printf("Salameche recupere 1 pt de magie\n");
             pdmSalameche ++;
         }
+        
+        if (dotSalameche != 0)
+        {
+            printf("Salameche souffre du poison (%d)", pdvSalameche -= dmgPoison)
+        }
+        
         printf("C'est le tour de Salameche que souhaitez vous faire ? \n");
         printf("Tapez 1 pour lancer une attaque lourde\n");
         printf("Tapez 2 pour vous defendre\n");
@@ -142,14 +141,12 @@ int main (){
             }
         }
 
-
         else if (choixAction == 2)
         {
             printf("Vous vous protegez et votre defense est multipliee par 4 ! \n");
             printf("Vous avez %d point de vie ! \n", pdvSalameche);
 
         }
-
 
         else if (choixAction == 3)
         {
@@ -176,7 +173,6 @@ int main (){
             printf("Il vous reste %d points de magie \n", pdmSalameche -= coutFlammeche);
         }
 
-        // N'ayant pas réussi à faire perdurer le poison, mon antidote sera un soin de 3 pv contre 5 pts de magie.
         else if (choixAction == 4)
         {
             printf("Vous utilisez un sort d'antidote \n");
@@ -209,17 +205,20 @@ int main (){
                 printf("\n");
             }
         }
-        //FIN DU TOUR DE SALAMECHE 
-        //--------------------------------------------------------------------------------------------------------------------------------
-
-
-        //-------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------
         //TOUR DE BULBIZARRE
+
         if (pdmBulbizarre<10)
         {
             printf("Bulbizarre recupere 1 pt de magie\n");
             pdmBulbizarre ++;
         }
+        
+        if (dotBulbizarre != 0)
+        {
+            printf("Salameche souffre du poison (%d)", pdvBulbizarre -= dmgPoison)
+        }
+        
         printf("C'est le tour de Bulbizarre que souhaitez vous faire ? \n");
         printf("Tapez 1 pour lancer une attaque legere\n");
         printf("Tapez 2 pour vous defendre\n");
@@ -288,7 +287,6 @@ int main (){
             printf("Il vous reste %d points de magie \n", pdmBulbizarre -= coutSort);
         }
 
-        // N'ayant pas réussi à faire perdurer le poison, mon antidote sera un soin de 3 pv contre 5 pts de magie.
         else if (choixAction == 4)
         {
             printf("Vous utilisez un sort d'antidote \n");
@@ -321,20 +319,20 @@ int main (){
                 printf("\n");
             }
         }
-        //FIN DU TOUR DE BULBIZARRE 
-        //--------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-        //-------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------
         //TOUR DE CARAPUCE
+        
         if (pdmBulbizarre<10)
         {
             printf("Carapuce recupere 1 pt de magie\n");
             pdmCarapuce ++;
         }
+        
+        if (dotCarapuce != 0)
+        {
+            printf("Salameche souffre du poison (%d)", pdvCarapuce -= dmgPoison)
+        }
+        
         printf("C'est le tour de Carapuce que souhaitez vous faire ? \n");
         printf("Tapez 1 pour lancer une attaque legere\n");
         printf("Tapez 2 pour vous defendre\n");
@@ -385,7 +383,6 @@ int main (){
             printf("Il vous reste %d points de magie \n", pdmCarapuce -= coutSort);
         }
 
-        // N'ayant pas réussi à faire perdurer le poison, mon antidote sera un soin de 3 pv contre 5 pts de magie.
         else if (choixAction == 4)
         {
             printf("Vous utilisez un sort d'antidote \n");
@@ -418,20 +415,10 @@ int main (){
                 printf("\n");
             }
         }
-        //FIN DU TOUR DE CARAPUCE 
-        //--------------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //TOUR ENNEMIS
+        // TOUR ASPICOT 
 
-
-
-// Condition qui devrait empecher Aspicot de m'envoyer un sort si sa reserve de magie est insuffisante mais qui ne marche pas.
-// Je n'arrive pas a bloquer (ce n'est pas faute d'avoir essayé différentes méthodes).
-
-
-// DEBUT TOUR ENNEMIS
-//----------------------------------------------------------------------------------------------------
-// TOUR ASPICOT 
-
-        
         printf("C'est au tour d'Aspicot.");
         
         if (pdmAspicot<10)
@@ -501,10 +488,8 @@ int main (){
                 dotCarapuce == 1;
                 printf("Carapuce est empoisonne ! \n", pdvCarapuce);
             }
-        }
-
-        
-        //-----------------------------------------------------------------
+        }        
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------
         //TOUR ABO
         
         printf("C'est au tour d'Abo.");
@@ -577,9 +562,7 @@ int main (){
                 printf("Carapuce est empoisonne ! \n", pdvCarapuce);
             }
         }
-        
-        
-        //---------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------
         //TOUR SMOGO
         
         printf("C'est au tour de Smogo.");
@@ -652,11 +635,9 @@ int main (){
                 printf("Carapuce est empoisonne ! \n", pdvCarapuce);
             }
         }
-        
-        
 
-        
-
+        //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //XP SYSTEM
         
         if (pdvAspicot <= 0 )
 				{	
@@ -727,6 +708,5 @@ int main (){
 			}
 
     }
-
-	return 0;
+return 0;
 }
