@@ -7,14 +7,26 @@
 
 int main (){
 	//Variables
+	int nombreEnnemi = 1;
+
 	int pdvAspicot = 10;
 	int pdmAspicot = 10;
+
+	int pdvAbo = 12;
+	int pdmAbo = 12;
+
+	int pdvSmogo = 20;
+	int pdmSmogo = 20;
+
 	int pdvSalameche = 10;
 	int pdmSalameche = 20;
+
 	int pdvCarapuce = 20;
 	int pdmCarapuce = 10;
+
 	int pdvBulbizarre = 15;
 	int pdmBulbizarre = 15;
+
 	int atkLegere = 1;
 	//Variable comportement joueur
 	int choixAction = 0;
@@ -26,6 +38,8 @@ int main (){
 	printf("Un Aspicot sauvage apparait\n");
 	printf("Aspicot sauvage a %d points de vie\n", pdvAspicot);
 	printf("Vous avez %d points de vie \n", pdvSalameche);
+
+
 
 
 	while (pdvAspicot > 0 && pdvSalameche > 0 )
@@ -40,6 +54,7 @@ int main (){
 		printf("Tapez 2 pour vous defendre\n");
 		printf("Tapez 3 pour lancer un sort de type poison\n");
 		printf("Tapez 4 pour utiliser un sort d'antidote\n");
+		printf("Tapez 5 pour aggro un nouvel ennemi\n");
 		scanf("%d", &choixAction);
 		
 		if (choixAction == 1)
@@ -79,6 +94,27 @@ int main (){
 
 		}
 
+		else if (choixAction == 5)
+		{	
+			if (nombreEnnemi == 1 )
+			{
+			printf("Abo apparait ! \n");
+			printf("Abo a %d points de vie et %d points de magie \n ", pdvAbo, pdmAbo);
+			nombreEnnemi++;
+			}
+			else if (nombreEnnemi == 2)
+			{
+				printf("Smogo apparait ! \n");
+				printf("Smogo a %d points de vie et %d points de magie \n ", pdvSmogo, pdmSmogo);
+				nombreEnnemi++;
+			}
+			
+			else if (nombreEnnemi == 3)
+			{
+				printf("Nombre maximum d'ennemi atteint, choisissez une autre action ! \n ");
+				scanf("%d", &choixAction);
+			}
+		}
 
 // Condition qui devrait empecher Aspicot de m'envoyer un sort si sa reserve de magie est insuffisante mais qui ne marche pas.
 // Je n'arrive pas a bloquer (ce n'est pas faute d'avoir essayé différentes méthodes).
