@@ -166,11 +166,36 @@ int main (){
 				{	printf("Aspicot est mort !!! \n");
 					
 				}
+
 			else if (pdvSalameche == 0)
 				{
-				printf("Vous etes mort !!! \n");
+				printf("Salameche etes mort !!! \n");
 				
 				}	
+
+			else if (pdvBulbizarre == 0)
+				{
+				printf("Bulbizarre etes mort !!! \n");
+				
+				}
+
+			else if (pdvAbo == 0)
+				{
+				printf("Abo etes mort !!! \n");
+				
+				}
+
+			else if (pdvCarapuce == 0)
+				{
+				printf("Carapuce etes mort !!! \n");
+				
+				}
+				
+			else if (pdvSmogo == 0)
+				{
+				printf("Smogo etes mort !!! \n");
+				
+				}
 
 	return 0;
 }
