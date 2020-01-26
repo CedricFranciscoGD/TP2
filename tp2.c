@@ -35,6 +35,30 @@ int main (){
 	int coutSort = 3;
 	int coutAntidote = 5;
 
+	//Barre d'exp des pokémons alliés
+	//Tableau
+	int exp[3];
+
+	//0 = Salamèche
+	//1 = Bulbizarre
+	//2 = Carapuce
+	exp[0] = 0;
+	exp[1] = 0;
+	exp[2] = 0;
+
+	//LVL 
+	int lvl[3];
+
+	//0 = Salamèche
+	//1 = Bulbizarre
+	//2 = Carapuce
+	lvl[0] = 1;
+	lvl[1] = 1;
+	lvl[2] = 1;
+
+
+
+
 	printf("Un Aspicot sauvage apparait\n");
 	printf("Aspicot sauvage a %d points de vie\n", pdvAspicot);
 	printf("Vous avez %d points de vie \n", pdvSalameche);
@@ -327,13 +351,20 @@ int main (){
 
 			
 		
-	}
+}
 
 		
 
 			if (pdvAspicot <= 0 )
-				{	printf("Aspicot est mort !!! \n");
-					
+				{	
+					printf("Aspicot est mort !!! \n");
+					printf("Vos pokemons ont gagne +5 points d'experience \n");
+					exp[0]+=5;
+					exp[1]+=5;
+					exp[2]+=5;
+					printf("Salameche a %d points d'experience\n", exp[0] );
+					printf("Bulbizarre a %d points d'experience\n", exp[1] );
+					printf("Carapuce a %d points d'experience\n", exp[2] );
 				}
 
 			else if (pdvSalameche <= 0)
@@ -351,7 +382,13 @@ int main (){
 			else if (pdvAbo <= 0)
 				{
 				printf("Abo etes mort !!! \n");
-				
+				printf("Vos pokémons ont gagné 10 points d'exp\n");
+				exp[0]+=10;
+				exp[1]+=10;
+				exp[2]+=10;
+				printf("Salameche a %d points d'experience\n", exp[0] );
+				printf("Bulbizarre a %d points d'experience\n", exp[1] );
+				printf("Carapuce a %d points d'experience\n", exp[2] );
 				}
 
 			else if (pdvCarapuce <= 0)
@@ -363,8 +400,30 @@ int main (){
 			else if (pdvSmogo <= 0)
 				{
 				printf("Smogo etes mort !!! \n");
-				
-				}
+				printf("Vos pokémons ont gagné 20 points d'exp\n");
+				exp[0]+=20;
+				exp[1]+=20;
+				exp[2]+=20;
+				printf("Salameche a %d points d'experience\n", exp[0] );
+				printf("Bulbizarre a %d points d'experience\n", exp[1] );
+				printf("Carapuce a %d points d'experience\n", exp[2] );
+			}
+
+			while(exp[0]>= 5 && exp[1]>= 5 && exp[2]>= 5)
+			{
+				lvl[0] ++;
+				exp[0] -=5;
+				printf("Salameche vient de monter LVL %d \n", lvl[0]);
+				lvl[1] ++;
+				exp[1] -=5;
+				printf("Bulbizarre vient de monter LVL %d \n", lvl[1]);
+				lvl[2] ++;
+				exp[2] -=5;
+				printf("Carapuce vient de monter LVL %d \n", lvl[2]);
+
+			}
+
+			
 
 	return 0;
 }
