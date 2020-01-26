@@ -114,12 +114,16 @@ int main (){
         printf("Tapez 3 pour lancer flammeche\n");
         printf("Tapez 4 pour utiliser un sort d'antidote\n");
         printf("Tapez 5 pour aggro un nouvel ennemi\n");
+        printf("\n");
         scanf("%d", &choixAction);
+        printf("\n");
 
         if (choixAction == 1)
         {
             printf("Qui voulez vous attaquer ? Aspicot = 4, Abo = 5, Smogo = 6\n");
+            printf("\n");
             scanf("%d", &choixCible);
+            printf("\n");
             printf("Vous lancez une attaque lourde ! \n");
             if (choixCible == idAspicot)
             {
@@ -151,7 +155,9 @@ int main (){
         {
             printf("Vous lancez flammeche \n");
             printf("Qui voulez vous attaquer ? Aspicot = 4, Abo = 5, Smogo = 6\n");
+            printf("\n");
             scanf("%d", &choixCible);
+            printf("\n");
             if (choixCible == idAspicot)
             {
                 pdvAspicot -= flammeche;
@@ -198,7 +204,9 @@ int main (){
             else if (nombreEnnemi == 3)
             {
                 printf("Nombre maximum d'ennemi atteint, choisissez une autre action ! \n ");
+                printf("\n");
                 scanf("%d", &choixAction);
+                printf("\n");
             }
         }
         //FIN DU TOUR DE SALAMECHE 
@@ -218,12 +226,16 @@ int main (){
         printf("Tapez 3 pour lancer un sort de soin\n");
         printf("Tapez 4 pour utiliser un sort d'antidote\n");
         printf("Tapez 5 pour aggro un nouvel ennemi\n");
+        printf("\n");
         scanf("%d", &choixAction);
+        printf("\n");
 
         if (choixAction == 1)
         {
             printf("Qui voulez vous attaquer ? Aspicot = 4, Abo = 5, Smogo = 6\n");
+            printf("\n");
             scanf("%d", &choixCible);
+            printf("\n");
             printf("Vous lancez une attaque legere ! \n");
             if (choixCible == idAspicot)
             {
@@ -255,7 +267,9 @@ int main (){
         {
             printf("Bulbizarre utilise Soin ! \n");
             printf("Qui voulez vous soigner ? Salameche = 1, Bulbizarre = 2, Carapuce = 3.\n");
+            printf("\n");
             scanf("%d", &choixCible);
+            printf("\n");
             if (choixCible == idSalameche)
             {
                 pdvSalameche += Soin;
@@ -302,7 +316,9 @@ int main (){
             else if (nombreEnnemi == 3)
             {
                 printf("Nombre maximum d'ennemi atteint, choisissez une autre action ! \n ");
+                printf("\n");
                 scanf("%d", &choixAction);
+                printf("\n");
             }
         }
         //FIN DU TOUR DE BULBIZARRE 
@@ -325,12 +341,16 @@ int main (){
         printf("Tapez 3 pour lancer un sort de d'aggro\n");
         printf("Tapez 4 pour utiliser un sort d'antidote\n");
         printf("Tapez 5 pour aggro un nouvel ennemi\n");
+        printf("\n");
         scanf("%d", &choixAction);
+        printf("\n");
 
         if (choixAction == 1)
         {
             printf("Qui voulez vous attaquer ? Aspicot = 4, Abo = 5, Smogo = 6\n");
+            printf("\n");
             scanf("%d", &choixCible);
+            printf("\n");
             printf("Vous lancez une attaque legere ! \n");
             if (choixCible == idAspicot)
             {
@@ -393,7 +413,9 @@ int main (){
             else if (nombreEnnemi == 3)
             {
                 printf("Nombre maximum d'ennemi atteint, choisissez une autre action ! \n ");
+                printf("\n");
                 scanf("%d", &choixAction);
+                printf("\n");
             }
         }
         //FIN DU TOUR DE CARAPUCE 
