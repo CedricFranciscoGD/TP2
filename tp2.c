@@ -67,10 +67,10 @@ int main (){
 	int exp[3];
 
 	//0 = Salamèche
-	//1 = Bulbizarre
-	//2 = Carapuce
 	exp[0] = 0;
+    //1 = Bulbizarre
 	exp[1] = 0;
+    //2 = Carapuce
 	exp[2] = 0;
 
 	//LVL 
@@ -107,7 +107,7 @@ int main (){
             printf("Salameche souffre du poison (%d)", pdvSalameche -= dmgPoison)
         }
         
-        printf("C'est le tour de Salameche que souhaitez vous faire ? \n");
+        printf("C'est le tour de Salameche, que souhaitez vous faire ? \n");
         printf("Tapez 1 pour lancer une attaque lourde\n");
         printf("Tapez 2 pour vous defendre\n");
         printf("Tapez 3 pour lancer flammeche\n");
@@ -219,7 +219,7 @@ int main (){
             printf("Salameche souffre du poison (%d)", pdvBulbizarre -= dmgPoison)
         }
         
-        printf("C'est le tour de Bulbizarre que souhaitez vous faire ? \n");
+        printf("C'est le tour de Bulbizarre, que souhaitez vous faire ? \n");
         printf("Tapez 1 pour lancer une attaque legere\n");
         printf("Tapez 2 pour vous defendre\n");
         printf("Tapez 3 pour lancer un sort de soin\n");
@@ -333,7 +333,7 @@ int main (){
             printf("Salameche souffre du poison (%d)", pdvCarapuce -= dmgPoison)
         }
         
-        printf("C'est le tour de Carapuce que souhaitez vous faire ? \n");
+        printf("C'est le tour de Carapuce, que souhaitez vous faire ? \n");
         printf("Tapez 1 pour lancer une attaque legere\n");
         printf("Tapez 2 pour vous defendre\n");
         printf("Tapez 3 pour lancer un sort de d'aggro\n");
