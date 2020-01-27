@@ -40,6 +40,8 @@ int main (){
 	int pdvCarapuce = 20;
 	int pdmCarapuce = 10;
     int dotCarapuce = 0;
+    
+    int aggroCarapuce = 0;
 
     //Bulbizarre
     int idBulbizarre = 2;
@@ -104,7 +106,7 @@ int main (){
         
         if (dotSalameche != 0)
         {
-            printf("Salameche souffre du poison (%d)", pdvSalameche -= dmgPoison)
+            printf("Salameche souffre du poison (%d)", pdvSalameche -= dmgPoison);
         }
         
         printf("C'est le tour de Salameche, que souhaitez vous faire ? \n");
@@ -216,7 +218,7 @@ int main (){
         
         if (dotBulbizarre != 0)
         {
-            printf("Salameche souffre du poison (%d)", pdvBulbizarre -= dmgPoison)
+            printf("Salameche souffre du poison (%d)", pdvBulbizarre -= dmgPoison);
         }
         
         printf("C'est le tour de Bulbizarre, que souhaitez vous faire ? \n");
@@ -330,7 +332,7 @@ int main (){
         
         if (dotCarapuce != 0)
         {
-            printf("Salameche souffre du poison (%d)", pdvCarapuce -= dmgPoison)
+            printf("Salameche souffre du poison (%d)", pdvCarapuce -= dmgPoison);
         }
         
         printf("C'est le tour de Carapuce, que souhaitez vous faire ? \n");
@@ -433,24 +435,24 @@ int main (){
         }
         
         if (choixActionEnnemi == 1)
-        {
+        {            
             for (i = 0; i < 1; i++)
             {
                 choixCibleEnnemi = printf("%d\n", 1 + rand()%3);
             }
             
-            if (idSalameche == choixCibleEnnemi)
+            if (idSalameche == choixCibleEnnemi && aggroCarapuce = 0)
             {
                 pdvSalameche -= atkLegere;
                 printf("Salameche a %d points de vie! \n", pdvSalameche);
             }
             
-            if (idBulbizarre == choixCibleEnnemi)
+            if (idBulbizarre == choixCibleEnnemi && aggroCarapuce = 0)
             {
                 pdvBulbizarre -= atkLegere;
                 printf("Bulbizarre a %d points de vie! \n", pdvBulbizarre);
             }
-            if (idCarapuce == choixCibleEnnemi)
+            if (idCarapuce == choixCibleEnnemi || aggroCarapuce = 1)
             {
                 pdvCarapuce -= atkLegere;
                 printf("Carapuce a %d points de vie! \n", pdvCarapuce);
@@ -472,18 +474,18 @@ int main (){
                 choixCibleEnnemi = printf("%d\n", 1 + rand()%3);
             }
             
-            if (idSalameche == choixCibleEnnemi)
+            if (idSalameche == choixCibleEnnemi && aggroCarapuce = 0)
             {
                 dotSalameche == 1;
                 printf("Salameche est empoisonne ! \n", pdvSalameche);
             }
             
-            if (idBulbizarre == choixCibleEnnemi)
+            if (idBulbizarre == choixCibleEnnemi && aggroCarapuce = 0)
             {
                 dotBulbizarre == 1;
                 printf("Bulbizarre est empoisonne ! \n", pdvBulbizarre);
             }
-            if (idCarapuce == choixCibleEnnemi)
+            if (idCarapuce == choixCibleEnnemi || aggroCarapuce = 1)
             {
                 dotCarapuce == 1;
                 printf("Carapuce est empoisonne ! \n", pdvCarapuce);
@@ -512,18 +514,18 @@ int main (){
                 choixCibleEnnemi = printf("%d\n", 1 + rand()%3);
             }
             
-            if (idSalameche == choixCibleEnnemi)
+            if (idSalameche == choixCibleEnnemi && aggroCarapuce = 0)
             {
                 pdvSalameche -= atkLegere;
                 printf("Salameche a %d points de vie! \n", pdvSalameche);
             }
             
-            if (idBulbizarre == choixCibleEnnemi)
+            if (idBulbizarre == choixCibleEnnemi && aggroCarapuce = 0)
             {
                 pdvBulbizarre -= atkLegere;
                 printf("Bulbizarre a %d points de vie! \n", pdvBulbizarre);
             }
-            if (idCarapuce == choixCibleEnnemi)
+            if (idCarapuce == choixCibleEnnemi || aggroCarapuce = 1)
             {
                 pdvCarapuce -= atkLegere;
                 printf("Carapuce a %d points de vie! \n", pdvCarapuce);
@@ -545,18 +547,18 @@ int main (){
                 choixCibleEnnemi = printf("%d\n", 1 + rand()%3);
             }
             
-            if (idSalameche == choixCibleEnnemi)
+            if (idSalameche == choixCibleEnnemi && aggroCarapuce = 0)
             {
                 dotSalameche == 1;
                 printf("Salameche est empoisonne ! \n", pdvSalameche);
             }
             
-            if (idBulbizarre == choixCibleEnnemi)
+            if (idBulbizarre == choixCibleEnnemi && aggroCarapuce = 0)
             {
                 dotBulbizarre == 1;
                 printf("Bulbizarre est empoisonne ! \n", pdvBulbizarre);
             }
-            if (idCarapuce == choixCibleEnnemi)
+            if (idCarapuce == choixCibleEnnemi || aggroCarapuce = 1)
             {
                 dotCarapuce == 1;
                 printf("Carapuce est empoisonne ! \n", pdvCarapuce);
@@ -585,18 +587,18 @@ int main (){
                 choixCibleEnnemi = printf("%d\n", 1 + rand()%3);
             }
             
-            if (idSalameche == choixCibleEnnemi)
+            if (idSalameche == choixCibleEnnemi && aggroCarapuce = 0)
             {
                 pdvSalameche -= atkLegere;
                 printf("Salameche a %d points de vie! \n", pdvSalameche);
             }
             
-            if (idBulbizarre == choixCibleEnnemi)
+            if (idBulbizarre == choixCibleEnnemi && aggroCarapuce = 0)
             {
                 pdvBulbizarre -= atkLegere;
                 printf("Bulbizarre a %d points de vie! \n", pdvBulbizarre);
             }
-            if (idCarapuce == choixCibleEnnemi)
+            if (idCarapuce == choixCibleEnnemi || aggroCarapuce = 1)
             {
                 pdvCarapuce -= atkLegere;
                 printf("Carapuce a %d points de vie! \n", pdvCarapuce);
@@ -618,18 +620,18 @@ int main (){
                 choixCibleEnnemi = printf("%d\n", 1 + rand()%3);
             }
             
-            if (idSalameche == choixCibleEnnemi)
+            if (idSalameche == choixCibleEnnemi && aggroCarapuce = 0)
             {
                 dotSalameche == 1;
                 printf("Salameche est empoisonne ! \n", pdvSalameche);
             }
             
-            if (idBulbizarre == choixCibleEnnemi)
+            if (idBulbizarre == choixCibleEnnemi && aggroCarapuce = 0)
             {
                 dotBulbizarre == 1;
                 printf("Bulbizarre est empoisonne ! \n", pdvBulbizarre);
             }
-            if (idCarapuce == choixCibleEnnemi)
+            if (idCarapuce == choixCibleEnnemi || aggroCarapuce = 1)
             {
                 dotCarapuce == 1;
                 printf("Carapuce est empoisonne ! \n", pdvCarapuce);
